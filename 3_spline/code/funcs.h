@@ -22,7 +22,7 @@ using DivisType = decltype(std::declval<numeratorType>() / std::declval<denomina
 template<typename Type>
 using DiffType = decltype(std::declval<Type>() - std::declval<Type>());
 
-/** класс для работы с трехдиагональной матрицей **/
+
 template<typename Type>
 class ThreeDiagonalMatrix {
 private:
@@ -43,14 +43,14 @@ public:
     
     }
 
-    //вызов i строки 
+   
     std::array<Type, 3> operator() (const unsigned int i) const {
         return diag[i];
     };
 
 };
 
-/** Функция для решения метод0м прогонки **/
+
 template<typename mType, typename cType>
 std::vector<DivisType<cType, mType>> solve(const ThreeDiagonalMatrix<mType>& matrix,
     const std::vector<cType>& column) 
@@ -111,8 +111,8 @@ private:
 
 public:
     CubicSpline(const std::vector<xType>& points, const std::vector<yType>& values,
-        const Deriv2Type& first,  // значение для левой второй производной
-        const Deriv2Type& second  // значение для правой второй производной
+        const Deriv2Type& first,  
+        const Deriv2Type& second  
     ) : points{ points }
     {
         const unsigned int N = points.size() - 1;
