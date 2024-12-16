@@ -8,14 +8,14 @@
 struct IterationException {};
 
 /**
-    Решает уравнение Кеплера методом Ньютона
-    * ecc - эксцентриситет, принадлежит (0, 1)
-    * meanAnomaly - средняя аномалия, М (радианы)
-    * maxIter - максимальное количество итераций
-    * tol - точность, с которой нужно отыскать решение
+    ГђГҐГёГ ГҐГІ ГіГ°Г ГўГ­ГҐГ­ГЁГҐ ГЉГҐГЇГ«ГҐГ°Г  Г¬ГҐГІГ®Г¤Г®Г¬ ГЌГјГѕГІГ®Г­Г 
+    * ecc - ГЅГЄГ±Г¶ГҐГ­ГІГ°ГЁГ±ГЁГІГҐГІ, ГЇГ°ГЁГ­Г Г¤Г«ГҐГ¦ГЁГІ (0, 1)
+    * meanAnomaly - Г±Г°ГҐГ¤Г­ГїГї Г Г­Г®Г¬Г Г«ГЁГї, ГЊ (Г°Г Г¤ГЁГ Г­Г»)
+    * maxIter - Г¬Г ГЄГ±ГЁГ¬Г Г«ГјГ­Г®ГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГЁГІГҐГ°Г Г¶ГЁГ©
+    * tol - ГІГ®Г·Г­Г®Г±ГІГј, Г± ГЄГ®ГІГ®Г°Г®Г© Г­ГіГ¦Г­Г® Г®ГІГ»Г±ГЄГ ГІГј Г°ГҐГёГҐГ­ГЁГҐ
 
-    Рекомендуемое поведение. Если решение не нашлось за maxIter итераций - выбрасывать исключение.
-    Если приближения к решению между итерациями меняются не более, чем на tol, то решение достигнуто.
+    ГђГҐГЄГ®Г¬ГҐГ­Г¤ГіГҐГ¬Г®ГҐ ГЇГ®ГўГҐГ¤ГҐГ­ГЁГҐ. Г…Г±Г«ГЁ Г°ГҐГёГҐГ­ГЁГҐ Г­ГҐ Г­Г ГёГ«Г®Г±Гј Г§Г  maxIter ГЁГІГҐГ°Г Г¶ГЁГ© - ГўГ»ГЎГ°Г Г±Г»ГўГ ГІГј ГЁГ±ГЄГ«ГѕГ·ГҐГ­ГЁГҐ.
+    Г…Г±Г«ГЁ ГЇГ°ГЁГЎГ«ГЁГ¦ГҐГ­ГЁГї ГЄ Г°ГҐГёГҐГ­ГЁГѕ Г¬ГҐГ¦Г¤Гі ГЁГІГҐГ°Г Г¶ГЁГїГ¬ГЁ Г¬ГҐГ­ГїГѕГІГ±Гї Г­ГҐ ГЎГ®Г«ГҐГҐ, Г·ГҐГ¬ Г­Г  tol, ГІГ® Г°ГҐГёГҐГ­ГЁГҐ Г¤Г®Г±ГІГЁГЈГ­ГіГІГ®.
 **/
 double keplerSolver(double ecc, double meanAnomaly, unsigned int maxIter, double tol)
 {
@@ -48,10 +48,10 @@ struct ArgumentGetter<R(Arg)> {
 
 template<typename Callable, typename RealType>
 decltype(auto) solve(
-    const Callable& func,                                             // функция F
-    const RealType& tau,                                              // шаг тау
-    const typename ArgumentGetter<Callable>::Argument& initialGuess,  // начальное приближение
-    const unsigned int nIteration                                     // количество итераций
+    const Callable& func,                                             
+    const RealType& tau,                                              
+    const typename ArgumentGetter<Callable>::Argument& initialGuess,  
+    const unsigned int nIteration                                     
 ) 
 {
     double x = initialGuess;
